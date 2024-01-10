@@ -1,0 +1,16 @@
+services:
+  indexado_streamlit:
+    build:
+      args:
+          - USER_NAME=santiago
+          - USER_ID=1022
+          - USER_GID=1023
+      context: .
+      dockerfile: Dockerfile
+    container_name: galgo_demo_indexing
+    ports:
+      - 8502:8502
+    volumes:
+      - .:/indexado-streamlit
+    stdin_open: true
+    tty: true
